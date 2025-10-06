@@ -5,4 +5,4 @@ import"./assets/modulepreload-polyfill-B5Qt9EMX.js";/* empty css                
     </a>
   </li>
 `).join("");e.innerHTML=n;new a(".gallery a",{captionsData:"alt",captionPosition:"bottom",captionDelay:250});
-//# sourceMappingURL=gallery.js.map
+//# sourceMappingURL=1-gallery.js.map
