@@ -15,4 +15,129 @@
 @import url('./vite-promo.css');
 @import url('./badges.css');
 @import url('./back-link.css');
-@import url('./footer.css');
+/* @import url('./footer.css'); */
+
+/* src/css/styles.css */
+:root{
+  --bg:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --primary:#6c5ce7;        /* фиолетовая кнопка */
+  --radius:16px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Контейнер (если нет собственного base.css/container.css) */
+.container{ max-width: 1024px; margin-inline:auto; padding:24px 16px; }
+
+/* Заголовки */
+.main-title{
+  text-align:center;
+  font-weight:800;
+  font-size:clamp(28px, 3vw, 40px);
+  margin:24px 0;
+}
+
+/* Ссылка "назад" */
+.back-link{
+  display:inline-block;
+  margin:8px 0 24px;
+  padding:6px 12px;
+  border:1px solid #e5e7eb;
+  border-radius:999px;
+  text-decoration:none;
+  color:var(--text);
+  transition:.2s;
+}
+.back-link:hover{ background:#f3f4f6; }
+
+/* ---------- index.html: список ссылок ---------- */
+ul{ margin:0; padding:0; }
+.index-links{
+  list-style:none;
+  display:flex; gap:12px;
+  padding:24px 16px;
+}
+.index-links a{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  text-decoration:none;
+  color:var(--text);
+  transition:.2s;
+}
+.index-links a:hover{ background:#f9fafb; }
+
+/* ---------- Галерея ---------- */
+.gallery{
+  list-style:none;
+  padding:0;
+  display:grid;
+  gap:16px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.gallery-link{ text-decoration:none; outline:none; }
+.gallery-image{
+  width:100%;
+  height:220px;
+  display:block;
+  object-fit:cover;
+  border-radius:var(--radius);
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.gallery-item:hover .gallery-image{
+  transform: translateY(-2px);
+  box-shadow:0 14px 34px rgba(0,0,0,.14);
+}
+
+/* (не обязательно) подписи SimpleLightbox чуть поменьше */
+.sl-caption{ font-size:14px; }
+
+/* ---------- Форма ---------- */
+.feedback-form{
+  max-width:640px;
+  margin:32px auto;
+  display:grid;
+  gap:16px;
+}
+.feedback-form label{ display:grid; gap:8px; font-weight:600; }
+.feedback-form input,
+.feedback-form textarea{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  background:#fff;
+  color:inherit;
+  font:inherit;
+  outline:none;
+  transition:border-color .2s, box-shadow .2s;
+}
+.feedback-form input:focus,
+.feedback-form textarea:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 4px rgba(108,92,231,.15);
+}
+.feedback-form button{
+  justify-self:start;
+  padding:10px 16px;
+  border:none;
+  border-radius:12px;
+  background:var(--primary);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition: transform .15s ease, filter .2s ease;
+}
+.feedback-form button:hover{ filter:brightness(.96); }
+.feedback-form button:active{ transform: translateY(1px); }
